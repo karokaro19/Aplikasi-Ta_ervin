@@ -1,0 +1,65 @@
+@include('layouts.component.headerhomepage')
+
+        <!--================= Wrapper Start Here =================-->
+        <div class="react-wrapper">
+            <div class="react-wrapper-inner">
+       
+            <div class="react-breadcrumbs">
+                    <div class="breadcrumbs-wrap">
+                        <img class="desktop" src="{{url('assetsdepan/images/artikel.jpg')}}" alt="Breadcrumbs">
+                        <img class="mobile" src="{{url('assetsdepan/images/artikel.jpg')}}" alt="Breadcrumbs">
+                        <div class="breadcrumbs-inner">
+                            <div class="container">
+                                <div class="breadcrumbs-text">
+                                    <h1 class="breadcrumbs-title">Detail Artikel {{ $artikel->judul_artikel }}</h1>
+                                    <div class="back-nav">
+                                        <ul>
+                                            <li><a href="{{ url ('homepage.home')}}">Home</a></li>
+                                            <li>{{ $artikel->judul_artikel }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>            
+
+            <div class="back__course__page_grid react-courses__single-page react-events__single-page pb---40 pt---120">
+                    <div class="container pb---70">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="events-details">
+                                    <h3>{{ $artikel->judul_artikel }}</h3>
+                                    
+                                    <?php
+                                        echo $artikel->isi_artikel;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 md-mt-60">
+                                <div class="react-sidebar react-back-course2 ml----30">                                                                        
+                                    <div class="widget get-back-course">   
+                                        <img class="img-fluid" src="{{ url ('gambarartikel/') }}/{{ $artikel->gambar_artikel }}">                                                                           
+                                    </div> 
+                                    <div class="widget react-date-sec">
+                                        <ul class="recent-date">
+                                            <li> Judul Artikel: <b>{{ $artikel->judul_artikel }}</b></li>
+                                            <li> Diupload Oleh: <b>Admin</b></li>
+                                            <li> Tanggal Diupload: <b>{{ $artikel->created_at }}</b></li>
+                                        </ul>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <!--================= Course Filter Section End Here =================--> 
+                            
+            
+        </div>
+        </div>
+
+<!--================= Course Filter Section End Here =================--> 
+   
+@include('layouts.component.footerhomepage')	
